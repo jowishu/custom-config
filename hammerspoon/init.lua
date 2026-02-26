@@ -1,0 +1,19 @@
+local targetDeviceName = "博威的AirPods"
+local targetVolume = 25 
+local lastDeviceName = ""
+
+function audioDeviceChanged()
+    local current = hs.audiodevice.defaultOutputDevice()
+    local name = current:name()
+
+    if name ~= lastDeviceName then
+        lastDeviceName = name
+        if string.find(name, targetDeviceName) then
+            current:setVolume(targetVolume)
+            hs.alert.show(targetDeviceName .. " connected, set volume to: " .. targetVolume)
+        end
+    end
+end
+
+hs.audiodevice.watcher.setCallback(audioDeviceChanged)
+hs.audiodevice.watcher:start()
