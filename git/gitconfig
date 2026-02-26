@@ -1,0 +1,49 @@
+[user]
+	name = jiabw.cn
+	email = jiabw.cn@gmail.com
+[push]
+  default = simple
+  autoSetupRemote = true
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
+[pull]
+  rebase = true
+[core]
+  editor = nvim
+  autocrlf = input
+  quotepath = false
+  precomposeUnicode = true
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  required = true
+  process = git-lfs filter-process
+[alias]
+  st = status
+  br = branch
+  ci = commit
+  co = checkout
+  pl = pull --rebase
+  cp = cherry-pick
+  lg = log --color --graph --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%Cred%h%Creset %Cgreen(%cd) %C(yellow)<%an>%Creset -- %s' --abbrev-commit
+[credential]
+  helper = store
+[oh-my-zsh]
+  hide-dirty = 1
+  hide-status = 1
+[add.interactive]
+  useBuiltin = false
+[init]
+  defaultBranch = master
+[diff]
+  tool = nvimdiff
+  renames = true
+  colorMoved = plain
+  algorithm = histogram
+  mnemonicPrefix = true
+[url "git@git.corp.kuaishou.com:"]
+  insteadOf = https://git.corp.kuaishou.com/
+[pager]
+  branch = false
