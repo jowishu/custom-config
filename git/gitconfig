@@ -43,7 +43,5 @@
   colorMoved = plain
   algorithm = histogram
   mnemonicPrefix = true
-[url "git@git.corp.kuaishou.com:"]
-  insteadOf = https://git.corp.kuaishou.com/
 [pager]
   branch = false
