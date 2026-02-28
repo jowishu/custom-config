@@ -12,7 +12,7 @@ return { -- Highlight, edit, and navigate code
       "cmake",
       "comment",
       "llvm",
-      "mlir",
+      -- "mlir",
       "yaml",
       "toml",
       "json",
