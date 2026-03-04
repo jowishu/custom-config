@@ -1,0 +1,29 @@
+CompileFlags:
+  Add:
+    - -ferror-limit=0
+  Remove:
+    - --compiler-options
+    - --expt-relaxed-constexpr
+    - -gencode
+    - --ftz=true
+    - -ccbin
+Index:
+  Background: Skip
+
+---
+
+If:
+  PathMatch: .*\.cu
+CompileFlags:
+  Add:
+    - -xcuda
+    - --cuda-path=/usr/local/cuda/
+
+---
+
+If:
+  PathMatch: .*\.cu.h
+CompileFlags:
+  Add:
+    - -xcuda
+    - --cuda-path=/usr/local/cuda/
