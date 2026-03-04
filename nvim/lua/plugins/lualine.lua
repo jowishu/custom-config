@@ -40,11 +40,11 @@ return {
       },
       sections = {
         lualine_a = {mode},
-        -- lualine_b = { 'branch' },
         lualine_b = {nothing},
         lualine_c = {filename},
         lualine_x = {
-          {"encoding", cond = hide_in_width}, {"filetype", cond = hide_in_width}
+          {"encoding", cond = hide_in_width, fmt = string.upper},
+          {"filetype", cond = hide_in_width}
         },
         lualine_y = {"location"},
         lualine_z = {"progress"}
