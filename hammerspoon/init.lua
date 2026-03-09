@@ -1,5 +1,5 @@
 local targetDeviceName = "博威的AirPods"
-local targetVolume = 25 
+local targetVolume = 35 
 local lastDeviceName = ""
 
 function audioDeviceChanged()
