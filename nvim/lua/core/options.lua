@@ -90,3 +90,6 @@ vim.opt.spelllang = {'en_us'}
 -- doxygen style comment highlight
 vim.g.load_doxygen_syntax = 1
 vim.o.modelines = 1
+
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
