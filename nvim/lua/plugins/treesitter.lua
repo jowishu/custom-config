@@ -12,7 +12,6 @@ return { -- Highlight, edit, and navigate code
       "cmake",
       "comment",
       "llvm",
-      -- "mlir",
       "yaml",
       "toml",
       "json",
@@ -31,7 +30,7 @@ return { -- Highlight, edit, and navigate code
     },
     indent = {
       enable = true,
-      disable = {"ruby"}
+      disable = {"ruby", "cpp"}
     }
   }
 }
