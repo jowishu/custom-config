@@ -33,7 +33,7 @@ require("lazy").setup({
   -- require 'plugins.copilot',
 })
 
-vim.lsp.set_log_level("ERROR")
+vim.lsp.log.set_level("ERROR")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
