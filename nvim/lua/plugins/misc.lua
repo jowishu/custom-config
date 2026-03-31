@@ -28,5 +28,5 @@ return {
   {
     -- vim-go
     "fatih/vim-go"
-  }
+  },
 }
