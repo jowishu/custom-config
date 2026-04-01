@@ -59,3 +59,11 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
     vim.bo.filetype = "pbtxt"
   end
 })
+
+-- highlight
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'c', 'cpp', 'python', 'cuda', 'pbtxt' },
+  callback = function()
+    vim.treesitter.start()
+  end,
+})

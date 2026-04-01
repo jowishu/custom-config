@@ -1,9 +1,7 @@
 return { -- Highlight, edit, and navigate code
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
-  main = "nvim-treesitter.configs", -- Sets main module to use for opts
-  branch = "master",
-  -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
+  branch = "main",
   opts = {
     ensure_installed = {
       "cpp",
@@ -30,7 +28,6 @@ return { -- Highlight, edit, and navigate code
     },
     indent = {
       enable = true,
-      disable = {"ruby", "cpp"}
     }
   }
 }

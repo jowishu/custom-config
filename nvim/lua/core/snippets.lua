@@ -1,7 +1,8 @@
 -- Custom code snippets for different purposes
 -- Prevent LSP from overwriting treesitter color settings
 -- https://github.com/NvChad/NvChad/issues/1907
-vim.hl.priorities.semantic_tokens = 95 -- Or any number lower than 100, treesitter's priority level
+-- Or any number lower than 100, treesitter's priority level
+vim.hl.priorities.semantic_tokens = 95
 
 -- Appearance of diagnostics
 vim.diagnostic.config({
@@ -24,8 +25,7 @@ vim.diagnostic.config({
 })
 
 -- Highlight on yank
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight",
-                                                    {clear = true})
+local highlight_group = vim.api.nvim_create_augroup("YankHighlight", {clear = true})
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function() vim.hl.on_yank() end,
   group = highlight_group,
