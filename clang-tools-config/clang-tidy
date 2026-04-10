@@ -1,0 +1,38 @@
+HeaderFilterRegex: ''
+Checks: >
+  -*,
+  clang-diagnostic-*,
+  misc-*,
+  llvm-*,
+  -misc-const-correctness,
+  -misc-include-cleaner,
+  -misc-no-recursion,
+  -misc-non-private-member-variables-in-classes,
+  -misc-unused-parameters,
+  -misc-use-anonymous-namespace,
+  -llvm-include-order,
+  readability-identifier-naming
+
+CheckOptions:
+  - key:             readability-identifier-naming.ClassCase
+    value:           CamelCase
+  - key:             readability-identifier-naming.EnumCase
+    value:           CamelCase
+  - key:             readability-identifier-naming.UnionCase
+    value:           CamelCase
+  - key:             readability-identifier-naming.FunctionCase
+    value:           CamelBack
+  - key:             readability-identifier-naming.PrivateMemberCase
+    value:           lower_case
+  - key:             readability-identifier-naming.ProtectedMemberCase
+    value:           lower_case
+  - key:             readability-identifier-naming.PublicMemberCase
+    value:           lower_case
+  - key:             readability-identifier-naming.PrivateMemberSuffix
+    value:           _
+  - key:             readability-identifier-naming.ProtectedMemberSuffix
+    value:           _
+  - key:             readability-identifier-naming.ParameterCase
+    value:           lower_case
+  - key:             readability-identifier-naming.VariableCase
+    value:           lower_case
