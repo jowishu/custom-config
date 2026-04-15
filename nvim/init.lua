@@ -30,6 +30,7 @@ require("lazy").setup({
   require("plugins.glow"),
   require("plugins.formatting"),
   require("plugins.svnj"),
+  -- require("plugins.codecompanion"),
   -- require 'plugins.copilot',
 })
 
