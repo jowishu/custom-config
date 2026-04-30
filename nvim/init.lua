@@ -30,8 +30,8 @@ require("lazy").setup({
   require("plugins.glow"),
   require("plugins.formatting"),
   require("plugins.svnj"),
+  require("plugins.leetcode"),
   require("plugins.codecompanion"),
-  -- require 'plugins.copilot',
 })
 
 vim.lsp.log.set_level("ERROR")
