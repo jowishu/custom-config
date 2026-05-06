@@ -30,12 +30,12 @@ return {
         interactions = {
           chat = {
             adapter = "anthropic",
-            model = "GLM-5.1"
+            model = "GLM-5-1"
           },
           background = {
             adapter = {
               name = "anthropic",
-              model = "GLM-5.1"
+              model = "GLM-5-1"
             }
           },
           inline = {
