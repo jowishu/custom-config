@@ -8,8 +8,8 @@ return {
     require("codecompanion").setup({
       adapters = {
         http = {
-          anthropic = function()
-            return require("codecompanion.adapters").extend("anthropic", {
+          openai = function()
+            return require("codecompanion.adapters").extend("openai", {
               url = "https://tokenverse.corp.kuaishou.com/v1/chat/completions",
               env = {
                 api_key = function()
@@ -18,34 +18,31 @@ return {
               },
               headers = {
                 ["Authorization"] = "Bearer ${api_key}",
-                ["Content-Type"] = "application/json",
-                ["x-api-key"] = "${api_key}",
+              },
+              schema = {
+                model = {
+                  default = "GLM-5-1",
+                }
+              },
+              opts = {
+                compaction = false,
               },
             })
           end,
         },
       },
-      opts = {
-        language = "Chinese",
-        interactions = {
-          chat = {
-            adapter = "anthropic",
-            model = "GLM-5-1"
-          },
-          background = {
-            adapter = {
-              name = "anthropic",
-              model = "GLM-5-1"
-            }
-          },
-          inline = {
-            adapter = "anthropic",
-          },
-          cmd = {
-            adapter = "anthropic",
-          },
+      interactions = {
+        chat = {
+          adapter = "openai",
         },
-      }
+        inline = {
+          adapter = "openai",
+        }
+      },
+      opts = {
+        log_level = "DEBUG",
+        language = "Chinese",
+      },
     })
   end
 }
