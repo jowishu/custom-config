@@ -75,3 +75,6 @@ vim.keymap.set("n", "<C-x>", quickfix, opts)
 
 -- get lsp log file
 vim.api.nvim_create_user_command("LspLogFile", ":lua=require('vim.lsp.log').get_filename()", {})
+
+-- CodeCompanionChat
+vim.keymap.set("n", "<leader>ccc", ":CodeCompanionChat<CR>", opts)
