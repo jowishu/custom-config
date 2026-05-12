@@ -5,6 +5,11 @@ return {
     local conform = require("conform")
 
     conform.setup({
+      formatters = {
+        black = {
+          append_args = {'--line-length=100'},
+        }
+      },
       formatters_by_ft = {
         json = {"prettier"},
         rust = {"rustfmt", lsp_format = "fallback"},
@@ -13,7 +18,8 @@ return {
         tablegen = {"clang-format"},
         cmake = {"gersemi"},
       },
-      format_on_save = nil
+      format_on_save = nil,
+      -- log_level = vim.log.levels.DEBUG,
     })
 
     vim.keymap.set({"n", "v"}, "<C-f>",
