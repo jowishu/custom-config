@@ -32,6 +32,9 @@ set report      =0         " Always report changed lines.
 set synmaxcol   =200       " Only highlight the first 200 columns.
 set nobackup
 
+set mouse=a
+colorscheme desert
+
 " 跳转到上次文件打开时的位置
 augroup resCur
   autocmd!
