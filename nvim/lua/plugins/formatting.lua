@@ -9,7 +9,7 @@ return {
         json = {"prettier"},
         rust = {"rustfmt", lsp_format = "fallback"},
         cpp = {"clang-format"},
-        python = {"ruff_format"},
+        python = {"black"},
         tablegen = {"clang-format"},
         cmake = {"gersemi"},
       },
