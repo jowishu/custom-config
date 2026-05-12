@@ -76,7 +76,7 @@ vim.o.writebackup = false
 vim.o.undofile = false
 -- Set completeopt to have a better completion experience (default: 'menu,preview')
 vim.o.completeopt = "menuone,noselect"
-vim.o.colorcolumn = "120"
+vim.o.colorcolumn = "115"
 -- Don't give |ins-completion-menu| messages (default: does not include 'c')
 vim.opt.shortmess:append("c")
 vim.o.textwidth = 0
