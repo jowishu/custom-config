@@ -1,11 +1,11 @@
 ---
 name: CodeTest
-interaction: inline
+interaction: chat
 description: 为选中代码补充单元测试
 opts:
   alias: CodeTest
   auto_submit: true
-  is_slash_cmd: false
+  is_slash_cmd: true
   modes:
     - v
   adapter:
