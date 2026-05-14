@@ -53,7 +53,7 @@ vim.api.nvim_create_user_command("Q", "q", {})
 vim.keymap.set("n", "<C-e>", ":Neotree toggle<CR>", opts)
 
 -- taglist
-vim.keymap.set("n", "<C-l>", ":TagbarToggle<CR>", opts)
+-- vim.keymap.set("n", "<C-l>", ":TagbarToggle<CR>", opts)
 vim.keymap.set("n", "<C-l>", ":Navbuddy<CR>", opts)
 
 -- switch between header and source
