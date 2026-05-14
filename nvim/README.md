@@ -63,7 +63,7 @@
 
 |模式|键位|说明|
 |:---|:---|:---|
-| n | space | leader-key |
+| n | `space` | leader 键 |
 | n | `<CR>` | 开启一个新的 tab |
 | n | `<C-d>` | 向下翻半页, 并将光标至于中间 |
 | n | `<C-u>` | 向上翻半页, 并将光标至于中间 |
@@ -79,7 +79,7 @@
 | n | `<leader>h` | 水平分屏 |
 | n | `<leader>d` | 切换 lsp 显示的详细信息 |
 | n | `<leader>cc` | 切换 CodeCompanion 的聊天窗口 |
-| v | < | 向左 indent |
-| v | > | 向右 indent |
+| v | `<` | 向左 indent |
+| v | `>` | 向右 indent |
 | v | `<leader>cp` | 触发 CodeCompanion 的 actions |
 
