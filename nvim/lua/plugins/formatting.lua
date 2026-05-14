@@ -16,7 +16,7 @@ return {
         cpp = {"clang-format"},
         python = {"black"},
         tablegen = {"clang-format"},
-        cmake = {"gersemi"},
+        cmake = {"cmake_format"},
       },
       format_on_save = nil,
       -- log_level = vim.log.levels.DEBUG,

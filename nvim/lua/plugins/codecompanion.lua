@@ -65,9 +65,15 @@ return {
         },
       },
       interactions = {
+        background = {
+          adapter = "tokenverse",
+        },
         chat = {
           adapter = "tokenverse",
           roles = {
+            llm = function(adapter)
+              return "Assistant (" .. adapter.name ..")"
+            end,
             user = "Jiabw"
           },
         },
@@ -83,6 +89,12 @@ return {
           dirs = {
             "~/.config/nvim/prompts"
           }
+        },
+      },
+      display = {
+        chat = {
+          -- show_settings = true,
+          start_in_insert_mode = true,
         },
       },
       opts = {
