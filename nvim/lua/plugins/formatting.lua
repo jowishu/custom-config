@@ -17,6 +17,7 @@ return {
         python = {"black"},
         tablegen = {"clang-format"},
         cmake = {"cmake_format"},
+        markdown = {"mdformat"},
       },
       format_on_save = nil,
       -- log_level = vim.log.levels.DEBUG,
