@@ -9,8 +9,8 @@ opts:
   modes:
     - v
   adapter:
-    name: tokenverse_plan
-    model: claude-opus-4-7
+    name: kimi
+    model: kimi-k2.6
 ---
 
 ## system

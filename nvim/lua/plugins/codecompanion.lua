@@ -108,10 +108,10 @@ return {
       },
       interactions = {
         background = {
-          adapter = "tokenverse_plan",
+          adapter = "kimi",
         },
         chat = {
-          adapter = "tokenverse_plan",
+          adapter = "kimi",
           roles = {
             llm = function(adapter)
               return "Assistant (" .. adapter.name ..")"
@@ -120,10 +120,10 @@ return {
           },
         },
         inline = {
-          adapter = "tokenverse_plan",
+          adapter = "kimi",
         },
         cmd = {
-          adapter = "tokenverse_plan",
+          adapter = "kimi",
         },
       },
       -- -- 自定义 prompt
