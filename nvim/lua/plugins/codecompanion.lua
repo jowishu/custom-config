@@ -99,7 +99,7 @@ return {
       },
       interactions = {
         chat = {
-          adapter = "tokenverse_plan",
+          adapter = "kimi",
           roles = {
             llm = function(adapter)
               return "Assistant (" .. adapter.name ..")"
@@ -108,10 +108,10 @@ return {
           },
         },
         inline = {
-          adapter = "tokenverse_plan",
+          adapter = "kimi",
         },
         cmd = {
-          adapter = "tokenverse_plan",
+          adapter = "kimi",
         },
       },
       display = {
