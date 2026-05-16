@@ -94,9 +94,5 @@ vim.o.modelines = 1
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_node_provider = 0
-vim.g.loaded_go_provier = 0
-vim.g.loaded_cargo_provier = 0
-vim.g.loaded_php_provier = 0
-vim.g.loaded_juliaprovier = 0
 
 vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"

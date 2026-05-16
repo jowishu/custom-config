@@ -14,7 +14,7 @@ return {
               name = "tokenverse",
               url = "https://tokenverse.corp.kuaishou.com/v1/chat/completions",
               env = {
-                api_key = function()
+                api_key = function ()
                   return os.getenv("TOKENVERSE_API_KEY")
                 end
               },
@@ -54,6 +54,32 @@ return {
                     choices = {
                       "claude-opus-4-7",
                       "gpt-5-5",
+                    }
+                  }
+                },
+                opts = {
+                  compaction = false,
+                },
+              })
+          end,
+          -- kimi
+          kimi = function()
+              return require("codecompanion.adapters").extend("openai", {
+                name = "kimi",
+                url = "https://api.moonshot.cn/v1/chat/completions",
+                env = {
+                  api_key = function()
+                    return os.getenv("KIMI_API_KEY")
+                  end
+                },
+                headers = {
+                  ["Authorization"] = "Bearer ${api_key}",
+                },
+                schema = {
+                  model = {
+                    default = "kimi-k2.6",
+                    choices = {
+                      "kimi-k2.6",
                     }
                   }
                 },
@@ -106,7 +132,7 @@ return {
         },
       },
       opts = {
-        -- log_level = "DEBUG",
+        log_level = "DEBUG",
         language = "Chinese",
       },
     })
