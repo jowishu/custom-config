@@ -81,7 +81,10 @@ return {
                     choices = {
                       "kimi-k2.6",
                     }
-                  }
+                  },
+                  top_p = {
+                    default = 0.95,
+                  },
                 },
                 opts = {
                   compaction = false,
