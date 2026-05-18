@@ -27,7 +27,7 @@ require("lazy").setup({
   require("plugins.gitsigns"),
   require("plugins.indent-blankline"),
   require("plugins.misc"),
-  require("plugins.glow"),
+  require("plugins.md-render"),
   require("plugins.formatting"),
   require("plugins.svnj"),
   require("plugins.leetcode"),

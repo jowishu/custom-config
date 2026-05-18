@@ -30,7 +30,7 @@
 │       ├── codecompanion.lua       ## Neovim AI 助手插件
 │       ├── formatting.lua          ## 代码格式化插件, 支持不同编程语言的格式化
 │       ├── gitsigns.lua            ## 和 git 相关的符号
-│       ├── glow.lua                ## Markdown 文件渲染插件 `:Glow`
+│       ├── md-render.lua           ## Markdown 文件渲染插件
 │       ├── indent-blankline.lua    ## 文件内代码 indent 插件
 │       ├── leetcode.lua            ## leetcode 刷题插件
 │       ├── lsp.lua                 ## lsp 相关配置
@@ -82,4 +82,5 @@
 | v | `<` | 向左 indent |
 | v | `>` | 向右 indent |
 | v | `<leader>cp` | 触发 CodeCompanion 的 actions |
+| n | `<leader>md` | markdown 文件渲染 |
 

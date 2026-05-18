@@ -80,3 +80,6 @@ vim.api.nvim_create_user_command("LspLogFile", ":lua=require('vim.lsp.log').get_
 vim.keymap.set("n", "<leader>cc", ":CodeCompanionChat Toggle<CR>", opts)
 -- CodeCompanionPromptActions
 vim.keymap.set("v", "<leader>cp", ":CodeCompanionActions<CR>", opts)
+
+-- markdown render
+vim.keymap.set("n", "<leader>md", ":RenderMarkdown toggle<CR>", opts)
