@@ -82,4 +82,4 @@ vim.keymap.set("n", "<leader>cc", ":CodeCompanionChat Toggle<CR>", opts)
 vim.keymap.set("v", "<leader>cp", ":CodeCompanionActions<CR>", opts)
 
 -- markdown render
-vim.keymap.set("n", "<leader>md", ":RenderMarkdown toggle<CR>", opts)
+vim.keymap.set("n", "<leader>md", ":Markview splitToggle<CR>", opts)
