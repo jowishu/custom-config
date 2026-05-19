@@ -26,7 +26,7 @@ return {
                   default = "GLM-5-1",
                   choices = {
                     "GLM-5-1",
-                    "kimi-k2-5"
+                    "kimi-k2-6"
                   }
                 }
               },

@@ -86,7 +86,7 @@ vim.opt.formatoptions = "tcqj"
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")
 -- enable spell check
 vim.opt.spell = true
-vim.opt.spelllang = {'en_us'}
+vim.opt.spelllang = {'en_us', 'cjk'}
 -- doxygen style comment highlight
 vim.g.load_doxygen_syntax = 1
 vim.o.modelines = 1
