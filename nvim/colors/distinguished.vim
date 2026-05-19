@@ -166,6 +166,33 @@ call s:ColorDictParser({
 	\ , 'diffLine'                    : [     68,     '',           'bold',      '5f87d7',        '',           'bold']
 	\ , 'diffFile'                    : [    242,     '',               '',      '6c6c6c',        '',               '']
 	\ , 'diffNewFile'                 : [    242,     '',               '',      '6c6c6c',        '',               '']
+	\
+	\ , 'markdownH1'                  : [    214,     '',           'bold',      'ffaf00',        '',           'bold']
+	\ , 'markdownH2'                  : [    202,     '',           'bold',      'ff5f00',        '',           'bold']
+	\ , 'markdownH3'                  : [    173,     '',           'bold',      'd7875f',        '',           'bold']
+	\ , 'markdownH4'                  : [    179,     '',           'bold',      'd7af5f',        '',           'bold']
+	\ , 'markdownH5'                  : [    186,     '',               '',      'd7d787',        '',               '']
+	\ , 'markdownH6'                  : [    187,     '',               '',      'd7d7af',        '',               '']
+	\ , 'markdownHeadingRule'         : [    160,     '',           'bold',      'd70000',        '',           'bold']
+	\ , 'markdownBold'                : [    231,     '',           'bold',      'ffffff',        '',           'bold']
+	\ , 'markdownItalic'              : [    222,     '',               '',      'ffd787',        '',               '']
+	\ , 'markdownBoldItalic'          : [    222,     '',           'bold',      'ffd787',        '',           'bold']
+	\ , 'markdownListMarker'          : [    173,     '',               '',      'd7875f',        '',               '']
+	\ , 'markdownOrderedListMarker'   : [    173,     '',               '',      'd7875f',        '',               '']
+	\ , 'markdownCode'                : [    143,    234,               '',      'afaf5f',  '1c1c1c',               '']
+	\ , 'markdownCodeBlock'           : [    143,    234,               '',      'afaf5f',  '1c1c1c',               '']
+	\ , 'markdownCodeDelimiter'       : [    243,    234,               '',      '767676',  '1c1c1c',               '']
+	\ , 'markdownBlockquote'          : [    246,     '',               '',      '949494',        '',               '']
+	\ , 'markdownLink'                : [     74,     '',               '',      '5fafd7',        '',               '']
+	\ , 'markdownLinkText'            : [     74,     '',           'bold',      '5fafd7',        '',           'bold']
+	\ , 'markdownLinkTextDelimiter'   : [    246,     '',               '',      '949494',        '',               '']
+	\ , 'markdownUrl'                 : [    109,     '',               '',      '87afaf',        '',               '']
+	\ , 'markdownUrlDelimiter'        : [    246,     '',               '',      '949494',        '',               '']
+	\ , 'markdownId'                  : [    152,     '',               '',      'afd7d7',        '',               '']
+	\ , 'markdownIdDeclaration'       : [    109,     '',           'bold',      '87afaf',        '',           'bold']
+	\ , 'markdownRule'                : [    240,     '',               '',      '585858',        '',               '']
+	\ , 'markdownFootnote'            : [    152,     '',               '',      'afd7d7',        '',               '']
+	\ , 'markdownFootnoteDefinition'  : [    152,     '',               '',      'afd7d7',        '',               '']
 \ })
 
 hi link htmlTag            xmlTag
@@ -179,3 +206,27 @@ hi link phpDocParam        vimCommentTitle
 hi link diffAdded          DiffAdd
 hi link diffChanged        DiffChange
 hi link diffRemoved        DiffDelete
+
+" Tree-sitter markdown support
+hi link @markup.heading.1           markdownH1
+hi link @markup.heading.2           markdownH2
+hi link @markup.heading.3           markdownH3
+hi link @markup.heading.4           markdownH4
+hi link @markup.heading.5           markdownH5
+hi link @markup.heading.6           markdownH6
+hi link @markup.heading             markdownH1
+hi link @markup.strong              markdownBold
+hi link @markup.italic              markdownItalic
+hi link @markup.strikethrough       Comment
+hi link @markup.list                markdownListMarker
+hi link @markup.list.unchecked      markdownListMarker
+hi link @markup.list.checked        markdownBold
+hi link @markup.link                markdownLink
+hi link @markup.link.label          markdownLinkText
+hi link @markup.link.url            markdownUrl
+hi link @markup.raw                 markdownCode
+hi link @markup.raw.block           markdownCodeBlock
+hi link @markup.quote               markdownBlockquote
+hi link @string.special.url         markdownUrl
+hi link @punctuation.special        markdownListMarker
+hi link @punctuation.delimiter      Delimiter
