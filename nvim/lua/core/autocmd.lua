@@ -67,3 +67,13 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.treesitter.start()
   end,
 })
+
+-- CodeCompanion 启动后自动退出 insert 模式
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "codecompanion",
+  callback = function()
+    vim.schedule(function()
+      vim.cmd.stopinsert()
+    end)
+  end,
+})
