@@ -7,7 +7,7 @@ return {
     conform.setup({
       formatters = {
         black = {
-          append_args = {'--line-length=110'},
+          append_args = {'--line-length=110', '--fast'},
         }
       },
       formatters_by_ft = {
