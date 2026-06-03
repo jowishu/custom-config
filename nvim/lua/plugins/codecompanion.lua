@@ -50,8 +50,9 @@ return {
                 },
                 schema = {
                   model = {
-                    default = "claude-opus-4-7",
+                    default = "claude-opus-4-8",
                     choices = {
+                      "claude-opus-4-8",
                       "claude-opus-4-7",
                       "gpt-5-5",
                     }
