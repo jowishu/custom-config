@@ -56,7 +56,19 @@ return {
                       "claude-opus-4-7",
                       "gpt-5-5",
                     }
-                  }
+                  },
+                  top_p = {
+                    -- gpt-5-5 模型不支持 top_p 参数，选中该模型时不发送
+                    ---@param self CodeCompanion.HTTPAdapter
+                    ---@return boolean
+                    enabled = function(self)
+                      local model = self.schema.model.default
+                      if type(model) == "function" then
+                        model = model(self)
+                      end
+                      return model ~= "gpt-5-5"
+                    end,
+                  },
                 },
                 opts = {
                   compaction = false,
@@ -136,7 +148,7 @@ return {
         },
       },
       opts = {
-        -- log_level = "DEBUG",
+        log_level = "DEBUG",
         language = "Chinese",
       },
     })
