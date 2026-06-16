@@ -59,7 +59,7 @@ return {
     require("mason").setup()
 
     require("mason-lspconfig").setup({
-      ensure_installed = {"clangd", "pyright", "jsonls"}
+      ensure_installed = {"clangd", "jsonls"}
     })
     vim.lsp.config("clangd", {
       filetypes = {"c", "cpp", "cuda"},
