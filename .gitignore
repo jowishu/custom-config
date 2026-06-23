@@ -1,1 +1,2 @@
 nvim/*.json
+**/node_modules/*
