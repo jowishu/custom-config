@@ -11,7 +11,7 @@ opts:
     - v
   adapter:
     name: tokenverse_plan
-    model: claude-opus-4-7
+    model: claude-opus-4-8
 ---
 
 ## system

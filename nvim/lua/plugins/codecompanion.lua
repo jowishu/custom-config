@@ -126,14 +126,14 @@ return {
           adapter = "tokenverse_plan",
         },
       },
-      -- 自定义 prompt
-      prompt_library = {
-        markdown = {
-          dirs = {
-            "~/.config/nvim/prompts"
-          }
-        },
-      },
+      -- -- 自定义 prompt
+      -- prompt_library = {
+      --   markdown = {
+      --     dirs = {
+      --       "~/.config/nvim/prompts"
+      --     }
+      --   },
+      -- },
       display = {
         action_palette = {
           opts = {

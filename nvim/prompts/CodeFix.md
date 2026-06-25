@@ -5,12 +5,12 @@ description: 修复 buffer 中选中的代码
 opts:
   alias: CodeFix
   auto_submit: true
-  is_slash_cmd: false
+  is_slash_cmd: true
   modes:
     - v
   adapter:
     name: tokenverse_plan
-    model: claude-opus-4-7
+    model: claude-opus-4-8
 ---
 
 ## system
