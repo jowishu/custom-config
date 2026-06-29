@@ -23,10 +23,11 @@ return {
               },
               schema = {
                 model = {
-                  default = "GLM-5-1",
+                  default = "deepseek-v4-pro",
                   choices = {
                     "GLM-5-1",
-                    "kimi-k2-6"
+                    "kimi-k2-6",
+                    "deepseek-v4-pro",
                   }
                 }
               },
