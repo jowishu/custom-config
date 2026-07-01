@@ -127,22 +127,7 @@ return {
           adapter = "tokenverse_plan",
         },
       },
-      -- -- 自定义 prompt
-      -- prompt_library = {
-      --   markdown = {
-      --     dirs = {
-      --       "~/.config/nvim/prompts"
-      --     }
-      --   },
-      -- },
       display = {
-        action_palette = {
-          opts = {
-            show_preset_actions = false,
-            show_preset_prompts = false,
-            show_preset_rules = false,
-          },
-        },
         chat = {
           -- show_settings = true,
           start_in_insert_mode = true,
