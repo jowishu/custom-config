@@ -23,10 +23,11 @@ return {
               },
               schema = {
                 model = {
-                  default = "GLM-5-1",
+                  default = "glm-5-2",
                   choices = {
+                    "glm-5-2",
                     "GLM-5-1",
-                    "kimi-k2-6"
+                    "kimi-k2-6",
                   }
                 }
               },
