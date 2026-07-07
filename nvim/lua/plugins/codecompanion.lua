@@ -25,11 +25,17 @@ return {
                 model = {
                   default = "glm-5-2",
                   choices = {
+                    "deepseek-v4-pro",
                     "glm-5-2",
                     "GLM-5-1",
                     "kimi-k2-6",
-                  }
-                }
+                  },
+                },
+                top_p = {
+                  enabled = function()
+                    return false
+                  end,
+                },
               },
               opts = {
                 compaction = false,
@@ -38,43 +44,36 @@ return {
           end,
           -- tokenverse_plan
           tokenverse_plan = function()
-              return require("codecompanion.adapters").extend("openai", {
-                name = "tokenverse_plan",
-                url = "https://tokenverse.corp.kuaishou.com/v1/chat/completions",
-                env = {
-                  api_key = function()
-                    return os.getenv("TOKENVERSE_PLAN_API_KEY")
-                  end
+            return require("codecompanion.adapters").extend("openai", {
+              name = "tokenverse_plan",
+              url = "https://tokenverse.corp.kuaishou.com/v1/chat/completions",
+              env = {
+                api_key = function()
+                  return os.getenv("TOKENVERSE_PLAN_API_KEY")
+                end
+              },
+              headers = {
+                ["Authorization"] = "Bearer ${api_key}",
+              },
+              schema = {
+                model = {
+                  default = "claude-opus-4-8",
+                  choices = {
+                    "claude-opus-4-8",
+                    "claude-opus-4-7",
+                    "gpt-5-5",
+                  }
                 },
-                headers = {
-                  ["Authorization"] = "Bearer ${api_key}",
+                top_p = {
+                  enabled = function()
+                    return false
+                  end,
                 },
-                schema = {
-                  model = {
-                    default = "claude-opus-4-8",
-                    choices = {
-                      "claude-opus-4-8",
-                      "claude-opus-4-7",
-                      "gpt-5-5",
-                    }
-                  },
-                  top_p = {
-                    -- gpt-5-5 模型不支持 top_p 参数，选中该模型时不发送
-                    ---@param self CodeCompanion.HTTPAdapter
-                    ---@return boolean
-                    enabled = function(self)
-                      local model = self.schema.model.default
-                      if type(model) == "function" then
-                        model = model(self)
-                      end
-                      return model ~= "gpt-5-5"
-                    end,
-                  },
-                },
-                opts = {
-                  compaction = false,
-                },
-              })
+              },
+              opts = {
+                compaction = false,
+              },
+            })
           end,
           -- kimi
           kimi = function()
@@ -134,7 +133,7 @@ return {
         },
       },
       opts = {
-        -- log_level = "DEBUG",
+        log_level = "DEBUG",
         language = "Chinese",
       },
     })
