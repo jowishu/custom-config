@@ -1,0 +1,55 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "tokenverse_plan_anthropic/claude-opus-4-8",
+  "disabled_providers": ["huggingface"],
+  "provider": {
+    "tokenverse": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "tokenverse",
+      "options": {
+        "baseURL": "https://tokenverse.corp.kuaishou.com/v1",
+        "apiKey": "{env:TOKENVERSE_API_KEY}"
+      },
+      "models": {
+        "deepseek-v4-pro": {
+          "name": "deepseek-v4-pro"
+        },
+        "glm-5-2": {
+          "name": "glm-5-2"
+        },
+        "glm-5-1": {
+          "name": "glm-5-1"
+        },
+        "kimi-k2-6": {
+          "name": "kimi-k2-6"
+        }
+      }
+    },
+    "tokenverse_plan_anthropic": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "tokenverse_plan_anthropic",
+      "options": {
+        "baseURL": "https://tokenverse.corp.kuaishou.com/v1",
+        "apiKey": "{env:TOKENVERSE_PLAN_API_KEY}"
+      },
+      "models": {
+        "claude-opus-4-8": {
+          "name": "claude-opus-4-8"
+        }
+      }
+    },
+    "tokenverse_plan_gpt": {
+      "npm": "@ai-sdk/openai",
+      "name": "tokenverse_plan_gpt",
+      "options": {
+        "baseURL": "https://tokenverse.corp.kuaishou.com/v1",
+        "apiKey": "{env:TOKENVERSE_PLAN_API_KEY}"
+      },
+      "models": {
+        "gpt-5-5": {
+          "name": "gpt-5-5"
+        }
+      }
+    }
+  }
+}
