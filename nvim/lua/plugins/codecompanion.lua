@@ -37,9 +37,6 @@ return {
                   end,
                 },
               },
-              opts = {
-                compaction = false,
-              },
             })
           end,
           -- tokenverse_plan
@@ -70,9 +67,6 @@ return {
                   end,
                 },
               },
-              opts = {
-                compaction = false,
-              },
             })
           end,
           -- kimi
@@ -99,17 +93,11 @@ return {
                     default = 0.95,
                   },
                 },
-                opts = {
-                  compaction = false,
-                },
               })
           end,
         },
       },
       interactions = {
-        background = {
-          adapter = "tokenverse_plan",
-        },
         chat = {
           adapter = "tokenverse_plan",
           roles = {
@@ -129,7 +117,7 @@ return {
       display = {
         chat = {
           -- show_settings = true,
-          start_in_insert_mode = true,
+          start_in_insert_mode = false,
         },
       },
       opts = {
