@@ -56,6 +56,38 @@ return {
                 model = {
                   default = "claude-opus-4-8",
                   choices = {
+                    "claude-sonnet-5",
+                    "claude-opus-4-8",
+                    "claude-opus-4-7",
+                    "gpt-5-5",
+                  }
+                },
+                top_p = {
+                  enabled = function()
+                    return false
+                  end,
+                },
+              },
+            })
+          end,
+          -- tokenverse_prod
+          tokenverse_prod = function()
+            return require("codecompanion.adapters").extend("openai", {
+              name = "tokenverse_prod",
+              url = "https://tokenverse.corp.kuaishou.com/v1/chat/completions",
+              env = {
+                api_key = function()
+                  return os.getenv("TOKENVERSE_PROD_API_KEY")
+                end
+              },
+              headers = {
+                ["Authorization"] = "Bearer ${api_key}",
+              },
+              schema = {
+                model = {
+                  default = "claude-opus-4-8",
+                  choices = {
+                    "claude-sonnet-5",
                     "claude-opus-4-8",
                     "claude-opus-4-7",
                     "gpt-5-5",

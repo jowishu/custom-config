@@ -6,7 +6,7 @@ body {
 	-moz-osx-font-smoothing: grayscale; 
 	text-rendering: optimizeLegibility;
 	word-wrap: break-word;
-	max-width: 72em;
+	max-width: 60em;
 }
 
 .feedHeader {
