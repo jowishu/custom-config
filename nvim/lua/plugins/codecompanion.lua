@@ -27,7 +27,6 @@ return {
                   choices = {
                     "deepseek-v4-pro",
                     "glm-5-2",
-                    "GLM-5-1",
                     "kimi-k2-6",
                   },
                 },
@@ -54,11 +53,12 @@ return {
               },
               schema = {
                 model = {
-                  default = "claude-opus-4-8",
+                  default = "claude-opus-5",
                   choices = {
+                    "claude-opus-5",
                     "claude-sonnet-5",
                     "claude-opus-4-8",
-                    "claude-opus-4-7",
+                    "gpt-5-6-sol",
                     "gpt-5-5",
                   }
                 },
@@ -85,11 +85,12 @@ return {
               },
               schema = {
                 model = {
-                  default = "claude-opus-4-8",
+                  default = "claude-opus-5",
                   choices = {
+                    "claude-opus-5",
                     "claude-sonnet-5",
                     "claude-opus-4-8",
-                    "claude-opus-4-7",
+                    "gpt-5-6-sol",
                     "gpt-5-5",
                   }
                 },
@@ -131,7 +132,7 @@ return {
       },
       interactions = {
         chat = {
-          adapter = "tokenverse_plan",
+          adapter = "tokenverse",
           roles = {
             llm = function(adapter)
               return "Assistant (" .. adapter.name ..")"
@@ -140,10 +141,10 @@ return {
           },
         },
         inline = {
-          adapter = "tokenverse_plan",
+          adapter = "tokenverse",
         },
         cmd = {
-          adapter = "tokenverse_plan",
+          adapter = "tokenverse",
         },
       },
       display = {
