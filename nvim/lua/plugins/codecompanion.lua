@@ -28,6 +28,7 @@ return {
                     "deepseek-v4-pro",
                     "glm-5-2",
                     "kimi-k2-6",
+                    "kimi-k3",
                   },
                 },
                 top_p = {
