@@ -1,5 +1,4 @@
 {
-  "$schema": "https://opencode.ai/config.json",
   "__$schema": "https://opencode.ai/config.json",
   "model": "tokenverse-plan-opus-5/claude-opus-5",
   "disabled_providers": ["huggingface"],
