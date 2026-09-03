@@ -27,6 +27,7 @@ return {
                   choices = {
                     "glm-5-3",
                     "kimi-k3",
+                    "Qwen3-VL-32B-Instruct",
                   },
                 },
                 top_p = {
@@ -55,10 +56,8 @@ return {
                   default = "claude-opus-5",
                   choices = {
                     "claude-opus-5",
-                    "claude-sonnet-5",
                     "claude-opus-4-8",
                     "gpt-5-6-sol",
-                    "gpt-5-5",
                   }
                 },
                 top_p = {
@@ -87,10 +86,8 @@ return {
                   default = "claude-opus-5",
                   choices = {
                     "claude-opus-5",
-                    "claude-sonnet-5",
                     "claude-opus-4-8",
                     "gpt-5-6-sol",
-                    "gpt-5-5",
                   }
                 },
                 top_p = {
@@ -145,7 +142,7 @@ return {
               return ctx.default_system_prompt
                 .. string.format(
                   [[Additional context:
-Do not use markdown tables. Do not use markdown emphasizes syntax.
+Do not use markdown tables. Do not use bold text in markdown.
 Each line should not exceed 100 characters.
 All non-code text responses must be written in the %s language.
 
