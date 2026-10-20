@@ -1,0 +1,11 @@
+{
+  "cssTheme": "Things",
+  "theme": "moonstone",
+  "enabledCssSnippets": [
+    "page-width"
+  ],
+  "accentColor": "",
+  "showViewHeader": false,
+  "showRibbon": true,
+  "nativeMenus": true
+}

@@ -1,0 +1,14 @@
+{
+  "readableLineLength": true,
+  "showLineNumber": false,
+  "defaultViewMode": "preview",
+  "vimMode": true,
+  "showUnsupportedFiles": false,
+  "settingsPopoutWindow": true,
+  "showInlineTitle": false,
+  "strictLineBreaks": false,
+  "foldHeading": true,
+  "foldIndent": true,
+  "showIndentGuide": true,
+  "rightToLeft": false
+}
