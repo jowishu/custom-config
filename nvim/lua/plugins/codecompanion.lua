@@ -8,41 +8,11 @@ return {
     require("codecompanion").setup({
       adapters = {
         http = {
-          -- tokenverse
-          tokenverse = function()
-            return require("codecompanion.adapters").extend("openai", {
-              name = "tokenverse",
-              url = "https://tokenverse.corp.kuaishou.com/v1/chat/completions",
-              env = {
-                api_key = function ()
-                  return os.getenv("TOKENVERSE_API_KEY")
-                end
-              },
-              headers = {
-                ["Authorization"] = "Bearer ${api_key}",
-              },
-              schema = {
-                model = {
-                  default = "glm-5-3",
-                  choices = {
-                    "glm-5-3",
-                    "kimi-k3",
-                    "Qwen3-VL-32B-Instruct",
-                  },
-                },
-                top_p = {
-                  enabled = function()
-                    return false
-                  end,
-                },
-              },
-            })
-          end,
           -- tokenverse_plan
           tokenverse_plan = function()
             return require("codecompanion.adapters").extend("openai", {
               name = "tokenverse_plan",
-              url = "https://tokenverse.corp.kuaishou.com/v1/chat/completions",
+              url = "https://tokenverse.corp.kuaishou.com/v1/responses",
               env = {
                 api_key = function()
                   return os.getenv("TOKENVERSE_PLAN_API_KEY")
@@ -72,7 +42,7 @@ return {
           tokenverse_prod = function()
             return require("codecompanion.adapters").extend("openai", {
               name = "tokenverse_prod",
-              url = "https://tokenverse.corp.kuaishou.com/v1/chat/completions",
+              url = "https://tokenverse.corp.kuaishou.com/v1/responses",
               env = {
                 api_key = function()
                   return os.getenv("TOKENVERSE_PROD_API_KEY")
@@ -102,7 +72,7 @@ return {
           kimi = function()
               return require("codecompanion.adapters").extend("openai", {
                 name = "kimi",
-                url = "https://api.moonshot.cn/v1/chat/completions",
+                url = "https://api.moonshot.cn/v1/responses",
                 env = {
                   api_key = function()
                     return os.getenv("KIMI_API_KEY")
@@ -128,7 +98,7 @@ return {
       },
       interactions = {
         chat = {
-          adapter = "tokenverse",
+          adapter = "tokenverse_plan",
           roles = {
             llm = function(adapter)
               return "Assistant (" .. adapter.name ..")"
@@ -161,10 +131,10 @@ The user is working on a %s machine. Please respond with system specific command
           }
         },
         inline = {
-          adapter = "tokenverse",
+          adapter = "tokenverse_plan",
         },
         cmd = {
-          adapter = "tokenverse",
+          adapter = "tokenverse_plan",
         },
       },
       display = {

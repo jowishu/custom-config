@@ -30,7 +30,6 @@ require("lazy").setup({
   require("plugins.md-render"),
   require("plugins.formatting"),
   require("plugins.svnj"),
-  require("plugins.leetcode"),
   require("plugins.codecompanion"),
 })
 

@@ -1,14 +1,14 @@
 {
   "__$schema": "https://opencode.ai/config.json",
-  "model": "tokenverse-plan-opus-5/claude-opus-5",
+  "model": "tokenverse/glm-5-3",
   "disabled_providers": ["huggingface"],
   "provider": {
     // tokenverse 模型配置
-    "tokenverse-glm-5-2": {
+    "tokenverse": {
       "models": {
-        "glm-5-2": { "name": "glm-5-2" }
+        "glm-5-3": { "name": "glm-5-3" }
       },
-      "name": "tokenverse-glm-5-2",
+      "name": "tokenverse",
       "npm": "@ai-sdk/openai-compatible",
       "options": {
         "apiKey": "{env:TOKENVERSE_API_KEY}",
@@ -16,68 +16,28 @@
       }
     },
     // tokenverse plan 模型配置
-    "tokenverse-plan-gpt-5-6-sol": {
+    "tokenverse-plan": {
       "models": {
-        "gpt-5-6-sol": { "name": "gpt-5-6-sol" }
-      },
-      "name": "tokenverse-plan-gpt-5-6-sol",
-      "npm": "@ai-sdk/openai",
-      "options": {
-        "apiKey": "{env:TOKENVERSE_PLAN_API_KEY}",
-        "baseURL": "https://tokenverse.corp.kuaishou.com/v1"
-      }
-    },
-    "tokenverse-plan-opus-4-8": {
-      "models": {
-        "claude-opus-4-8": { "name": "claude-opus-4-8" }
-      },
-      "name": "tokenverse-plan-opus-4-8",
-      "npm": "@ai-sdk/openai-compatible",
-      "options": {
-        "apiKey": "{env:TOKENVERSE_PLAN_API_KEY}",
-        "baseURL": "https://tokenverse.corp.kuaishou.com/v1"
-      }
-    },
-    "tokenverse-plan-opus-5": {
-      "models": {
+        "gpt-5-6-sol": { "name": "gpt-5-6-sol" },
+        "claude-opus-4-8": { "name": "claude-opus-4-8" },
         "claude-opus-5": { "name": "claude-opus-5" }
       },
-      "name": "tokenverse-plan-opus-5",
-      "npm": "@ai-sdk/openai-compatible",
+      "name": "tokenverse-plan",
+      "npm": "@ai-sdk/openai",
       "options": {
         "apiKey": "{env:TOKENVERSE_PLAN_API_KEY}",
         "baseURL": "https://tokenverse.corp.kuaishou.com/v1"
       }
     },
     // tokenverse prod 模型配置
-    "tokenverse-prod-gpt-5-6-sol": {
+    "tokenverse-prod": {
       "models": {
-        "gpt-5-6-sol": { "name": "gpt-5-6-sol" }
-      },
-      "name": "tokenverse-prod-gpt-5-6-sol",
-      "npm": "@ai-sdk/openai",
-      "options": {
-        "apiKey": "{env:TOKENVERSE_PROD_API_KEY}",
-        "baseURL": "https://tokenverse.corp.kuaishou.com/v1"
-      }
-    },
-    "tokenverse-prod-opus-4-8": {
-      "models": {
-        "claude-opus-4-8": { "name": "claude-opus-4-8" }
-      },
-      "name": "tokenverse-prod-opus-4-8",
-      "npm": "@ai-sdk/openai-compatible",
-      "options": {
-        "apiKey": "{env:TOKENVERSE_PROD_API_KEY}",
-        "baseURL": "https://tokenverse.corp.kuaishou.com/v1"
-      }
-    },
-    "tokenverse-prod-opus-5": {
-      "models": {
+        "gpt-5-6-sol": { "name": "gpt-5-6-sol" },
+        "claude-opus-4-8": { "name": "claude-opus-4-8" },
         "claude-opus-5": { "name": "claude-opus-5" }
       },
-      "name": "tokenverse-prod-opus-5",
-      "npm": "@ai-sdk/openai-compatible",
+      "name": "tokenverse-prod",
+      "npm": "@ai-sdk/openai",
       "options": {
         "apiKey": "{env:TOKENVERSE_PROD_API_KEY}",
         "baseURL": "https://tokenverse.corp.kuaishou.com/v1"
