@@ -10,9 +10,10 @@ vim.diagnostic.config({
     prefix = "●",
     -- Add a custom format function to show error codes
     format = function(diagnostic)
-      local code = diagnostic.code and string.format("[%s]", diagnostic.code) or
-                     ""
-      return string.format("%s %s", code, diagnostic.message)
+      if diagnostic.code ~= nil then
+        return string.format("[%s] %s", tostring(diagnostic.code), diagnostic.message)
+      end
+      return diagnostic.message
     end
   },
   underline = false,
@@ -20,14 +21,50 @@ vim.diagnostic.config({
   float = {
     source = "always" -- Or "if_many"
   },
-  -- Make diagnostic background transparent
-  on_ready = function() vim.cmd("highlight DiagnosticVirtualText guibg=NONE") end
 })
 
--- Highlight on yank
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight", {clear = true})
+-- 保留主题设置的前景色等属性，只清除背景。
+local function clear_diagnostic_background()
+  local groups = {
+    "DiagnosticVirtualTextError",
+    "DiagnosticVirtualTextWarn",
+    "DiagnosticVirtualTextInfo",
+    "DiagnosticVirtualTextHint",
+    "DiagnosticVirtualTextOk",
+  }
+
+  for _, name in ipairs(groups) do
+    local hl = vim.api.nvim_get_hl(0, {
+      name = name,
+      link = false,
+    })
+
+    hl.bg = nil
+    hl.ctermbg = nil
+
+    vim.api.nvim_set_hl(0, name, hl)
+  end
+end
+
+local diagnostic_group = vim.api.nvim_create_augroup(
+  "CustomDiagnosticHighlights",
+  { clear = true }
+)
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  group = diagnostic_group,
+  callback = clear_diagnostic_background,
+})
+
+clear_diagnostic_background()
+
+-- 复制内容时高亮。
+local yank_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+
 vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function() vim.hl.on_yank() end,
-  group = highlight_group,
-  pattern = "*"
+  group = yank_group,
+  pattern = "*",
+  callback = function()
+    vim.hl.on_yank()
+  end,
 })

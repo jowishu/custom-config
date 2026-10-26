@@ -5,7 +5,7 @@ return {
   dependencies = {
     -- Automatically install LSPs and related tools to stdpath for Neovim
     -- NOTE: Must be loaded before dependants
-    {"williamboman/mason.nvim", config = true},
+    {"williamboman/mason.nvim"},
 
     -- Useful status updates for LSP.
     "williamboman/mason-lspconfig.nvim",
@@ -53,22 +53,32 @@ return {
     --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
     --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = vim.tbl_deep_extend("force", capabilities, require(
-                                         "cmp_nvim_lsp").default_capabilities())
+    capabilities = vim.tbl_deep_extend("force", capabilities, require( "cmp_nvim_lsp").default_capabilities())
 
-    require("mason").setup()
-
-    require("mason-lspconfig").setup({
-      ensure_installed = {"clangd", "jsonls"}
+    vim.lsp.config("jedi_language_server", {
+      capabilities = capabilities,
+      init_options = {
+        workspace = {
+          environmentPath = vim.env.HOME .. "/.venv/bin/python"
+        }
+      }
     })
+
     vim.lsp.config("clangd", {
       filetypes = {"c", "cpp", "cuda"},
-      root_markser = {
+      root_markers = {
         "compile_commands.json", ".git", ".clangd", ".clang-tidy",
         ".clang-format"
       },
       capabilities = {offsetEncoding = {"utf-8"}},
+      capabilities = vim.tbl_deep_extend("force", capabilities, {offsetEncoding = {"utf-8"}}),
       cmd = {"clangd", "--clang-tidy"},
+    })
+
+    require("mason").setup()
+
+    require("mason-lspconfig").setup({
+      ensure_installed = {"clangd", "jsonls", "jedi_language_server"}
     })
   end
 }

@@ -10,7 +10,7 @@ return {
       position = "left",
       width = 32,
       mapping_options = {noremap = true, nowait = true},
-      mapping = {}
+      mappings = {}
     },
     default_component_configs = {
       file_size = {enabled = false},

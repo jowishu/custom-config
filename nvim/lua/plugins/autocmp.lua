@@ -11,7 +11,6 @@ return {
     "jowishu/cmp-nvim-lsp-signature-help",
     "f3fora/cmp-spell",
     "saadparwaiz1/cmp_luasnip",
-    "lukas-reineke/cmp-under-comparator"
   },
   config = function()
     local cmp = require("cmp")
@@ -22,16 +21,8 @@ return {
 
     cmplsp.setup()
 
-    local modified_priority = {
-      [types.lsp.CompletionItemKind.Variable] = types.lsp.CompletionItemKind
-        .Method,
-      [types.lsp.CompletionItemKind.Snippet] = 0, -- top
-      [types.lsp.CompletionItemKind.Keyword] = 0, -- top
-      [types.lsp.CompletionItemKind.Text] = 100 -- bottom
-    }
-
     cmp.setup({
-      preselect = false,
+      preselect = cmp.PreselectMode.None,
       completion = {completeopt = "menu,menuone,preview,noselect"},
       snippet = {expand = function(args) luasnip.lsp_expand(args.body) end},
       matching = {
@@ -41,7 +32,6 @@ return {
         disallow_partial_matching = false,
         disallow_prefix_unmatching = true
       },
-      min_length = 0, -- allow for `from package import _` in Python
       mapping = cmp.mapping.preset.insert({
         ["<CR>"] = cmp.mapping.confirm({select = false}), -- no not select first item
         ["<Tab>"] = cmp.mapping(function(fallback)
@@ -64,7 +54,7 @@ return {
         end, {"i", "s"})
       }),
       sources = cmp.config.sources({
-        {name = "nvim_lsp", max_item_count = 20},
+        {name = "nvim_lsp", keyword_length = 0, max_item_count = 20},
         {name = "luasnip", max_item_count = 20},
         {name = "nvim_lua", max_item_count = 20},
         {name = "nvim_lsp_signature_help", max_item_count = 20},

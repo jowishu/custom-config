@@ -60,10 +60,10 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
   end
 })
 
--- highlight
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'c', 'cpp', 'python', 'cuda', 'pbtxt' },
-  callback = function()
-    vim.treesitter.start()
-  end,
-})
+-- -- highlight
+-- vim.api.nvim_create_autocmd('FileType', {
+--   pattern = { 'c', 'cpp', 'python', 'cuda', 'pbtxt' },
+--   callback = function()
+--     vim.treesitter.start()
+--   end,
+-- })
