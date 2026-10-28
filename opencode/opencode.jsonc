@@ -13,7 +13,17 @@
       "models": {
         "glm-5-3": {
           "name": "GLM-5-3",
-          "modelID": "glm-5-3"
+          "modelID": "glm-5-3",
+          "capabilities": {
+            "tools": true,
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "limit": {
+            "context": 1048576,
+            "input": 1048576,
+            "output": 131072
+          }
         }
       }
     },
@@ -28,7 +38,17 @@
       "models": {
         "glm-5-3": {
           "name": "GLM-5-3",
-          "modelID": "glm-5-3"
+          "modelID": "glm-5-3",
+          "capabilities": {
+            "tools": true,
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "limit": {
+            "context": 1048576,
+            "input": 1048576,
+            "output": 131072
+          }
         }
       }
     }
