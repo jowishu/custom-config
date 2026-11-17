@@ -8,36 +8,6 @@ return {
     require("codecompanion").setup({
       adapters = {
         http = {
-          -- tokenverse_plan
-          tokenverse_plan = function()
-            return require("codecompanion.adapters").extend("openai", {
-              name = "tokenverse_plan",
-              url = "https://tokenverse.corp.kuaishou.com/v1/responses",
-              env = {
-                api_key = function()
-                  return os.getenv("TOKENVERSE_PLAN_API_KEY")
-                end
-              },
-              headers = {
-                ["Authorization"] = "Bearer ${api_key}",
-              },
-              schema = {
-                model = {
-                  default = "claude-opus-5",
-                  choices = {
-                    "claude-opus-5",
-                    "claude-opus-4-8",
-                    "gpt-5-6-sol",
-                  }
-                },
-                top_p = {
-                  enabled = function()
-                    return false
-                  end,
-                },
-              },
-            })
-          end,
           -- tokenverse_prod
           tokenverse_prod = function()
             return require("codecompanion.adapters").extend("openai", {
@@ -68,37 +38,11 @@ return {
               },
             })
           end,
-          -- kimi
-          kimi = function()
-              return require("codecompanion.adapters").extend("openai", {
-                name = "kimi",
-                url = "https://api.moonshot.cn/v1/responses",
-                env = {
-                  api_key = function()
-                    return os.getenv("KIMI_API_KEY")
-                  end
-                },
-                headers = {
-                  ["Authorization"] = "Bearer ${api_key}",
-                },
-                schema = {
-                  model = {
-                    default = "kimi-k2.6",
-                    choices = {
-                      "kimi-k2.6",
-                    }
-                  },
-                  top_p = {
-                    default = 0.95,
-                  },
-                },
-              })
-          end,
         },
       },
       interactions = {
         chat = {
-          adapter = "tokenverse_plan",
+          adapter = "tokenverse_prod",
           roles = {
             llm = function(adapter)
               return "Assistant (" .. adapter.name ..")"
@@ -131,10 +75,10 @@ The user is working on a %s machine. Please respond with system specific command
           }
         },
         inline = {
-          adapter = "tokenverse_plan",
+          adapter = "tokenverse_prod",
         },
         cmd = {
-          adapter = "tokenverse_plan",
+          adapter = "tokenverse_prod",
         },
       },
       display = {
