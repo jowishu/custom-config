@@ -57,7 +57,7 @@ vim.o.pumheight = 20
 -- So that `` is visible in markdown files (default: 1)
 vim.o.conceallevel = 0
 -- Keep signcolumn on by default (default: 'auto')
-vim.wo.signcolumn = "yes"
+vim.wo.signcolumn = "auto"
 -- The encoding written to a file (default: 'utf-8')
 vim.o.fileencoding = "utf-8"
 -- More space in the Neovim command line for displaying messages (default: 1)
