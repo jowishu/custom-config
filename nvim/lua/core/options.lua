@@ -45,7 +45,7 @@ vim.opt.termguicolors = true
 -- Which "horizontal" keys are allowed to travel to prev/next line (default: 'b,s')
 vim.o.whichwrap = "bs"
 -- Set number column width to 2 {default 4} (default: 4)
-vim.o.numberwidth = 4
+vim.o.numberwidth = 2
 -- Creates a swapfile (default: true)
 vim.o.swapfile = false
 -- Always show tabs (default: 1)
