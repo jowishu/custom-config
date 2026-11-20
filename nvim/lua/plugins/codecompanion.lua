@@ -23,11 +23,10 @@ return {
               },
               schema = {
                 model = {
-                  default = "claude-opus-5",
+                  default = "claude-opus-5-5",
                   choices = {
-                    "claude-opus-5",
-                    "claude-opus-4-8",
-                    "gpt-5-6-sol",
+                    "claude-opus-5-5",
+                    "gpt-6-1-sol",
                   }
                 },
                 top_p = {
